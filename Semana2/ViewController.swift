@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblAutores: UILabel!
     @IBOutlet weak var lblPortada: UILabel!
     @IBOutlet weak var lblMensaje: UILabel!
+    @IBOutlet weak var txtvAutores: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,8 @@ class ViewController: UIViewController {
                     
                     self.lblTitulo.text = dico2["title"] as! NSString as String
                     self.lblAutores.text = dico3["name"] as! NSString as String
-                    self.lblPortada.text = "No se encontroó información"
+                    self.txtvAutores.text = dico3["name"] as! NSString as String
+                    self.lblPortada.text = "No se encontró información / No cover found"// el JSON con el que se hace el ejercicio no tiene un diccionario "cover"
                 }
                 catch _{
                     
@@ -66,6 +68,7 @@ class ViewController: UIViewController {
                 lblTitulo.text = ""
                 lblAutores.text = ""
                 lblPortada.text = ""
+                lblPortada.text = ""
             }
         }
         else{
@@ -74,9 +77,11 @@ class ViewController: UIViewController {
             lblTitulo.text = ""
             lblAutores.text = ""
             lblPortada.text = ""
+            lblPortada.text = ""
         }
-        
+        txtISBN.resignFirstResponder()
     }
-
+    
+    
 }
 
